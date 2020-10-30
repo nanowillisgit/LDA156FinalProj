@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out
+                                                          % if you need a4paper
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4
+                                                          % paper
+
+\IEEEoverridecommandlockouts                              % This command is only
+                                                          % needed if you want to
+                                                          % use the \thanks command
+\overrideIEEEmargins
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+
+% The following packages can be found on http:\\www.ctan.org
+%\usepackage{graphics} % for pdf, bitmapped graphics files
+%\usepackage{epsfig} % for postscript graphics files
+%\usepackage{mathptmx} % assumes new font selection scheme installed
+%\usepackage{mathptmx} % assumes new font selection scheme installed
+%\usepackage{amsmath} % assumes amsmath package installed
+%\usepackage{amssymb}  % assumes amsmath package installed
+
+\title{\LARGE \bf
+Linear Discriminant Analysis*
+}
+
+%\author{ \parbox{3 in}{\centering Huibert Kwakernaak*
+%         \thanks{*Use the $\backslash$thanks command to put information here}\\
+%         Faculty of Electrical Engineering, Mathematics and Computer Science\\
+%         University of Twente\\
+%         7500 AE Enschede, The Netherlands\\
+%         {\tt\small h.kwakernaak@autsubmit.com}}
+%         \hspace*{ 0.5 in}
+%         \parbox{3 in}{ \centering Pradeep Misra**
+%         \thanks{**The footnote marks may be inserted manually}\\
+%        Department of Electrical Engineering \\
+%         Wright State University\\
+%         Dayton, OH 45435, USA\\
+%         {\tt\small pmisra@cs.wright.edu}}
+%}
+
+\author{Aatmun Baxi, Andy Chen, Johnny Mo, Abhi Vemulapati% <-this % stops a space
+\thanks{*This work was not supported by any organization}% <-this % stops a space
+% \thanks{$^{1}$J. Haddock is with the Department of Mathematics,
+ %       University of California, Los Angeles, 520 Portola Plaza, Los Angeles, CA 90095, USA
+ %       {\tt\small jhaddock@math.ucla.edu}}%
+}
+
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{abstract}
+
+%This electronic document is a ``live'' template. The various components of your paper [title, text, heads, etc.] are already defined on the style sheet, as illustrated by the portions given in this document.
+
+%\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objective}
+Supervised classification of datasets has proven to be one of the most versatile types of problems encountered in the study of machine learning. While the most prominent solutions to supervised classification, such as logistic regression, can often tackle a diverse array of problems, certain methods can more accurately classify datasets that satisfy certain assumptions. The method of linear discriminant analysis (LDA) is one such example \cite{friedman2001elements}. LDA provides a fix to the most significant shortcoming of logistic regression, which is its failure to find stable solutions to binary classification problems when classes are well-separated \cite{bishop2006pattern}. As a binary classifier, LDA assumes that input features are normally distributed in order to find a closed-form solution to the optimal separating hyperplane between the two classes. In the multiclassification problem, LDA uses diagonalization techniques in order to detect the features of an input dataset that minimize covariance among features within a class and maximize covariance among features between classes. The latter technique can also be used as a method of dimensionality reduction.
+
+Understanding LDA requires understanding of multi-variate Gaussian distributions, Bayesian probability, and numerical linear algebra.  Our research will make use of the standard machine learning reference~\cite{bishop2006pattern}, some statistical references~\cite{friedman2001elements,james2013introduction}, and a reference for relevant topics in advanced numerical linear algebra ~\cite{trefethen1997numerical}.
+
+\section{Steps}
+We aim to complete the following tasks in this project:
+
+\subsection{Mathematical Understanding}
+Our study of LDA will begin with an analysis of the underlying mathematical foundations of both the binary and multiple class techniques. This will include how LDA accomplishes dimension reduction while retaining discriminative information in the data, which will require understanding of the composition of the within-class scatter matrices and between-class scatter matrices labelled $S_w$ and $S_b$ respectively. We may also discuss Fisher's discriminant \cite{fisher}, which computes decision boundaries in a similar way but relaxes some assumptions about the within-class covariances. We plan to reference our statistical learning references (\cite{friedman2001elements} and \cite{james2013introduction}) during our examination of the math involved in LDA while also seeking out other various online resources that may explain the functionality of the LDA technique at a more computational level.
+%we will seek out recent video and popular references that describe this approach at a high level.  One of the most important things we will discuss is the relationship between PCA and the singular value decomposition.  We will understand how PCA is computed in the state-of-the-art implementations and will discuss computational efficiency and storage in our report.  We will additionally do a literature review of further advances and variants of PCA beyond the standard approach.
+
+\subsection{Applications}
+To demonstrate the abilities of LDA as both a dimension reduction technique and a classification model, we will present results for LDA applied on at least two data sets: these will include a high-attribute binary classification problem and a low-attribute multiclass classification problem. Tentatively, the data we have chosen for the former is a set of chest X-ray images classified by pneumonia positive patients and pneumonia negative patients from Kermany et al ~\cite{kermanyetal2018}. For the latter, we are considering applying LDA to one of several options, including Fashion MNIST \cite{xiao2017/online}, classification of star types \cite{starclass}, and classification of flower species using images \cite{FlowersRecognition}.
+
+\section{Deliverables} 
+We will present a report covering, in detail, the mathematical background of LDA, the LDA results on our example datasets, and an annotated Python implementation of the LDA model on our aforementioned applications. Analysis of our results will include considerations of the advantages and disadvantages of the LDA algorithm in our chosen applications and comparisons with other classification methods. The results, full analysis of the results, and a high level overview of the LDA method will be communicated in a slide presentation. The totality of the project, including the proposal, report, Python notebook, and slides will be made available via a Github repository under a permissive license.
+
+%Besides communicating the results in our final project report, we will create an iPython notebook which illustrates the code, data resources, and results of PCA application to synthetic and real data.  Our final project report will contain a subset of these results, highlighting those illustrating the mathematical properties of PCA and those results illustrating our novel application.  We will finally develop a set of slides for dissemination of these results to our classmates.  
+
+
+
+\bibliographystyle{plain}
+\bibliography{bib}
+
+
+
+\end{document}
