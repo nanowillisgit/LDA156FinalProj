@@ -17,7 +17,7 @@ This repository contains the total sum of the work done for our final project fo
 
 Ensure `git` is installed and run the following command inside the directory you'd like this repository to reside:
 ```
-https://github.com/nanowillisgit/LDA156FinalProj
+git clone https://github.com/nanowillisgit/LDA156FinalProj
 ```
 
 ### Option 2
