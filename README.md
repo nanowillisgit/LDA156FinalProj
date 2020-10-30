@@ -9,7 +9,7 @@ Authors:
 
 ## Description
 
-This repository contains the total sum of the work done for our final project for Math 156. This includes the LaTeX source and PDFs for the proposal and report, the slides for our the report, and the Python notebook of our implementations.
+This repository contains the total sum of the work done for our final project for Math 156. This includes the LaTeX source and PDFs for the proposal and report, the slides for the report, and the Python notebook of our implementations.
 
 ## How to Deploy
 
