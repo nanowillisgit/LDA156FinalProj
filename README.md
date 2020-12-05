@@ -11,7 +11,7 @@ The purpose of the final project is to gain a strong mathematical understanding 
 
 ## How to Deploy
 
-**Note:** The image datasets are not present in this repository, but a text file on how to recreate the directory structure so the Python notebook will run properly is available in the source/data directory.
+**Note:** The image datasets are not present in this repository, but a text file on how to recreate the directory structure so the Python notebook will run properly is available in the `source/data` directory.
 
 ### Option 1
 
