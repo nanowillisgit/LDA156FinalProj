@@ -80,7 +80,7 @@ data_test_attr = data_test.iloc[:,1:]
 # print("--- %s seconds" % (rfc_end - rfc_start))
 
 
-RED_DIM = 9
+RED_DIM = 3
 
 model = LDA(n_components=RED_DIM)
 
@@ -89,41 +89,41 @@ model.fit(data_train_attr,data_train_labels)
 red_data_train = model.transform(data_train_attr)
 print("Post-reduction dimensionality of data: ", red_data_train.shape)
 
-# colors = ['aqua', 'black', 'darkblue', 'darkgreen', 'gold', 'red', 'plum', 'sienna', 'violet',
-#           'olive']
+colors = ['aqua', 'black', 'darkblue', 'darkgreen', 'gold', 'red', 'plum', 'sienna', 'violet',
+          'olive']
 
 
 # # Number of points to plot
-# NUM_POINTS = 30
+NUM_POINTS = 200
 
-# if RED_DIM == 3:
-#     fig = plt.figure(figsize=(10,7))
-#     ax = plt.axes(projection="3d")
-#     for i in random.sample(range(len(red_data_train)),NUM_POINTS):
-#         X = red_data_train[i,0]
-#         Y = red_data_train[i,1]
-#         Z = red_data_train[i,2]
-#         ax.scatter3D(X,Y,Z, color=colors[data_train_labels[i]])
+if RED_DIM == 3:
+    fig = plt.figure(figsize=(10,7))
+    ax = plt.axes(projection="3d")
+    for i in random.sample(range(len(red_data_train)),NUM_POINTS):
+        X = red_data_train[i,0]
+        Y = red_data_train[i,1]
+        Z = red_data_train[i,2]
+        ax.scatter3D(X,Y,Z, color=colors[data_train_labels[i]])
 
-#     ax.set_xlabel('x')
-#     ax.set_ylabel('y')
-#     ax.set_zlabel('z')
-#     plt.title("Projected train data")
-#     plt.show()
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
+    ax.set_zlabel('z')
+    plt.title("Projected train data")
+    plt.show()
 
-# if RED_DIM == 2:
-#     plt.figure()
-#     for i in random.sample(range(len(red_data_train)),NUM_POINTS):
-#         X = red_data_train[i,0]
-#         Y = red_data_train[i,1]
-#         #Z = red_data_train[i,2]
-#         plt.scatter(X,Y, color=colors[data_train_labels[i]])
+if RED_DIM == 2:
+    plt.figure()
+    for i in random.sample(range(len(red_data_train)),NUM_POINTS):
+        X = red_data_train[i,0]
+        Y = red_data_train[i,1]
+        #Z = red_data_train[i,2]
+        plt.scatter(X,Y, color=colors[data_train_labels[i]])
 
-#     plt.title("Projected train data")
-#     plt.show()
+    plt.title("Projected train data")
+    plt.show()
 
 
-red_test_data = model.transform(data_test_attr)
+# red_test_data = model.transform(data_test_attr)
 
 #rand_sample = random.sample(range(len(data_train_attr)),30)
 
@@ -132,9 +132,9 @@ red_test_data = model.transform(data_test_attr)
 # scatter_matrix(reduced_df_train, figsize=(10,10),alpha=0.3, diagonal='kde')
 # plt.show()
 
-predictor = svm.SVC(kernel="sigmoid")
-predictor.fit(red_data_train, data_train_labels)
+# predictor = svm.SVC(kernel="sigmoid")
+# predictor.fit(red_data_train, data_train_labels)
 
-guesses = predictor.score(red_test_data, data_test_labels)
+# guesses = predictor.score(red_test_data, data_test_labels)
 
-print("Classifier on reduced data score: ",guesses)
+# print("Classifier on reduced data score: ",guesses)
