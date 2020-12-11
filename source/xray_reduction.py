@@ -130,6 +130,7 @@ for i in pneum_choices_test:
 
 immat_test = np.concatenate( (np.array(normal_imvecs_test), np.array(pneum_imvecs_test)) )
 np.random.shuffle(immat_test)
+
 test_attr = immat_test[:,:(dim**2)]
 test_classes = immat_test[:,(dim**2)]
 
