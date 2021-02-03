@@ -11,4 +11,4 @@ Modify it if needed.
 - [Chest X-Ray Set](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia)
 - [Fashion MNIST](https://www.kaggle.com/zalando-research/fashionmnist)
 
-**Note:** the `.py` files are scripts we used in getting our implementations together, so they may be buggy, inefficient, or incomplete. They are included for completeness. The `ColabNotebook.ipynb` is the collection of our final applications along with write-ups of our results.
+**Note:** the `.py` files are scripts we used in getting our implementations together, so they may be buggy, inefficient, or incomplete. They are included for completeness. The `LDANotebook.ipynb` is the collection of our final applications along with write-ups of our results.
